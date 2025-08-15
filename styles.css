@@ -9,19 +9,10 @@
     --card-bg: #1a1a1a;
     --border-color: #333;
     --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    --modal-bg: rgba(10, 26, 47, 0.95);
-    --modal-content-bg: #ffffff;
     --transition: all 0.3s ease;
     /* Typography */
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Inter', sans-serif;
-}
-
-
-/* Utility class to prevent scrolling */
-
-.no-scroll {
-    overflow: hidden !important;
 }
 
 * {
@@ -343,13 +334,38 @@ section {
 
 .image-decoration {
     position: absolute;
-    top: -20px;
-    right: -20px;
-    width: 100px;
-    height: 100px;
+    top: -15px;
+    right: -15px;
+    width: 100%;
+    height: 100%;
     border: 3px solid var(--accent-gold);
     border-radius: 10px;
     z-index: -1;
+    transition: transform 0.3s ease;
+}
+
+.about-image:hover .image-decoration {
+    transform: translate(8px, 8px);
+}
+
+
+/* Add a second decorative element */
+
+.about-image::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 100%;
+    height: 100%;
+    background: rgba(207, 163, 73, 0.1);
+    border-radius: 10px;
+    z-index: -2;
+    transition: transform 0.3s ease;
+}
+
+.about-image:hover::before {
+    transform: translate(-8px, -8px);
 }
 
 
@@ -919,7 +935,364 @@ section {
     }
 }
 
+
+/* Legal Aid Modal Styles */
+
+.legal-aid-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    padding-top: 70px;
+    overflow-y: auto;
+}
+
+.legal-aid-modal-content {
+    position: relative;
+    background-color: #f8f9fa;
+    margin: 30px auto;
+    padding: 35px;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.legal-aid-modal .close {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+}
+
+.legal-aid-modal .close:hover {
+    color: #000;
+}
+
+
+/* Fundamental Rights Modal Styles */
+
+.fundamental-rights-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    padding-top: 70px;
+    overflow-y: auto;
+}
+
+.fundamental-rights-modal-content {
+    position: relative;
+    background-color: #f8f9fa;
+    margin: 30px auto;
+    padding: 35px;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.fundamental-rights-modal .close {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+}
+
+.fundamental-rights-modal .close:hover {
+    color: #000;
+}
+
+.fundamental-rights-modal h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.fundamental-rights-modal h3 {
+    color: #333;
+    font-size: 20px;
+    margin: 25px 0 15px;
+}
+
+.fundamental-rights-modal-content .abstract {
+    font-style: italic;
+    color: #555;
+    border-left: 3px solid var(--accent-gold);
+    padding-left: 15px;
+    margin: 20px 0;
+}
+
+.fundamental-rights-modal-content p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #444;
+}
+
+.fundamental-rights-modal-content ul {
+    list-style-type: disc;
+    margin: 0 0 20px 20px;
+}
+
+.fundamental-rights-modal-content li {
+    color: #444;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.download-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f0f2f5;
+    border-radius: 6px;
+}
+
+.download-note {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.fundamental-rights-pdf-download {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--accent-gold);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.fundamental-rights-pdf-download:hover {
+    background-color: #b88f3d;
+}
+
+.legal-aid-modal h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.legal-aid-modal h3 {
+    color: #333;
+    font-size: 20px;
+    margin: 25px 0 15px;
+}
+
+.legal-aid-modal-content p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #444;
+}
+
+.legal-aid-modal-content ul {
+    list-style-type: disc;
+    margin: 0 0 20px 20px;
+}
+
+.legal-aid-modal-content li {
+    color: #444;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.legal-aid-pdf-download {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--accent-gold);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.legal-aid-pdf-download:hover {
+    background-color: #b88f3d;
+}
+
+
+/* Environmental Law Modal Styles */
+
+.environmental-law-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    padding-top: 70px;
+    overflow-y: auto;
+}
+
+.environmental-law-modal-content {
+    position: relative;
+    background-color: #f8f9fa;
+    margin: 30px auto;
+    padding: 35px;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.environmental-law-modal .close {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+}
+
+.environmental-law-modal .close:hover {
+    color: #000;
+}
+
+.environmental-law-modal h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.environmental-law-modal h3 {
+    color: #333;
+    font-size: 20px;
+    margin: 25px 0 15px;
+}
+
+.environmental-law-modal-content p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #444;
+}
+
+.environmental-law-modal-content ul {
+    list-style-type: disc;
+    margin: 0 0 20px 20px;
+}
+
+.environmental-law-modal-content li {
+    color: #444;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.environmental-law-modal .summary {
+    font-style: italic;
+    color: #555;
+    border-left: 3px solid var(--accent-gold);
+    padding-left: 15px;
+    margin: 20px 0;
+}
+
+.environmental-law-modal .download-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f0f2f5;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.environmental-law-modal .download-note {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.environmental-law-pdf-download {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--accent-gold);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.environmental-law-pdf-download:hover {
+    background-color: #b88f3d;
+}
+
+
+/* Modal Responsive Styles */
+
+@media (max-width: 768px) {
+    .environmental-law-modal {
+        padding-top: 60px;
+    }
+    .environmental-law-modal-content {
+        margin: 15px auto;
+        padding: 25px;
+        width: 90%;
+    }
+    .environmental-law-modal h2 {
+        font-size: 20px;
+    }
+    .environmental-law-modal h3 {
+        font-size: 18px;
+        margin: 20px 0 12px;
+    }
+}
+
 @media (max-width: 480px) {
+    .environmental-law-modal {
+        padding-top: 50px;
+    }
+    .environmental-law-modal-content {
+        margin: 10px auto;
+        padding: 20px;
+        width: 95%;
+    }
+}
+
+
+/* Modal Responsive Styles */
+
+@media (max-width: 768px) {
+    .supreme-court-modal {
+        padding-top: 60px;
+    }
+    .supreme-court-modal-content {
+        margin: 15px auto;
+        padding: 25px;
+        width: 90%;
+    }
+    .supreme-court-modal h2 {
+        font-size: 20px;
+    }
+    .supreme-court-modal h3 {
+        font-size: 18px;
+        margin: 20px 0 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .supreme-court-modal {
+        padding-top: 50px;
+    }
+    .supreme-court-modal-content {
+        margin: 10px auto;
+        padding: 20px;
+        width: 95%;
+    }
     .hero-title {
         font-size: 2rem;
     }
@@ -1035,90 +1408,90 @@ section {
 }
 
 
-/* Modal Styles */
+/* Supreme Court Modal Styles */
 
-.modal {
+.supreme-court-modal {
     display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--modal-bg);
+    background-color: rgba(0, 0, 0, 0.8);
     z-index: 1000;
-    backdrop-filter: blur(5px);
-}
-
-.modal-content {
-    position: relative;
-    background-color: var(--modal-content-bg);
-    margin: 5% auto;
-    padding: 2rem;
-    width: 90%;
-    max-width: 800px;
-    border-radius: 8px;
-    max-height: 85vh;
+    padding-top: 70px;
+    /* Add padding to account for the navbar */
     overflow-y: auto;
-    box-shadow: var(--shadow);
 }
 
-.close-modal {
+.supreme-court-modal-content {
+    position: relative;
+    background-color: #f8f9fa;
+    margin: 30px auto;
+    padding: 35px;
+    width: 80%;
+    max-width: 800px;
+    max-height: 80vh;
+    overflow-y: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.supreme-court-modal .close {
     position: absolute;
-    top: 1rem;
-    right: 1.5rem;
-    font-size: 1.75rem;
+    right: 20px;
+    top: 15px;
+    font-size: 28px;
+    font-weight: bold;
     cursor: pointer;
-    color: var(--text-gray);
-    transition: color 0.3s ease;
-}
-
-.close-modal:hover {
-    color: var(--accent-gold);
-}
-
-.modal-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    color: var(--primary-bg);
-    border-bottom: 2px solid var(--accent-gold);
-    padding-bottom: 0.5rem;
-}
-
-.modal-body {
-    font-family: 'Inter', sans-serif;
-    line-height: 1.8;
     color: #333;
 }
 
-.modal-body h3 {
-    font-family: 'Playfair Display', serif;
-    color: var(--primary-bg);
-    margin: 1.5rem 0 1rem;
-    font-size: 1.5rem;
+.supreme-court-modal .close:hover {
+    color: #000;
 }
 
-.modal-body ul {
-    margin: 1rem 0;
-    padding-left: 1.5rem;
+.supreme-court-modal h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
 }
 
-.modal-body li {
-    margin-bottom: 0.5rem;
+.supreme-court-modal-content p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #444;
 }
 
-.modal-tags {
-    margin-top: 2rem;
-    display: flex;
-    gap: 0.75rem;
-    flex-wrap: wrap;
+.supreme-court-modal-content ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 20px;
 }
 
-.modal-tag {
-    background-color: var(--primary-bg);
-    color: var(--text-light);
-    padding: 0.5rem 1rem;
+.supreme-court-modal-content li {
+    color: #444;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.supreme-court-modal h3 {
+    color: #333;
+    font-size: 20px;
+    margin: 25px 0 15px;
+}
+
+.supreme-court-pdf-download {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--accent-gold);
+    color: white;
+    text-decoration: none;
     border-radius: 4px;
-    font-size: 0.875rem;
-    font-weight: 500;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.supreme-court-pdf-download:hover {
+    background-color: #b88f3d;
 }
