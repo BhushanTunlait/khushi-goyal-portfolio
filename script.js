@@ -8,8 +8,12 @@ document.addEventListener('DOMContentLoaded', function() {
     initSmoothScrolling();
     initLazyLoading();
     initBackToTop();
+<<<<<<< HEAD
     initArticleModals();
 
+=======
+    
+>>>>>>> fb6a54415666908f0b4acd3dd1a50a7b0dbd8349
     console.log('Portfolio loaded successfully');
 });
 
@@ -112,11 +116,19 @@ function highlightActiveNavLink() {
 
         window.addEventListener('scroll', () => {
             let current = '';
+<<<<<<< HEAD
 
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
                 const sectionHeight = section.clientHeight;
 
+=======
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+>>>>>>> fb6a54415666908f0b4acd3dd1a50a7b0dbd8349
                 if (window.scrollY >= (sectionTop - 200)) {
                     current = section.getAttribute('id');
                 }
@@ -139,6 +151,7 @@ function highlightActiveNavLink() {
 function initSmoothScrolling() {
     try {
         const anchorLinks = document.querySelectorAll('a[href^="#"]');
+<<<<<<< HEAD
 
         anchorLinks.forEach(link => {
             link.addEventListener('click', function(e) {
@@ -154,6 +167,23 @@ function initSmoothScrolling() {
 
                     const offsetTop = targetElement.offsetTop - 70; // Account for fixed navbar
 
+=======
+        
+        anchorLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                // Skip if it's just a hash
+                if (href === '#') return;
+                
+                const targetElement = document.querySelector(href);
+                
+                if (targetElement) {
+                    e.preventDefault();
+                    
+                    const offsetTop = targetElement.offsetTop - 70; // Account for fixed navbar
+                    
+>>>>>>> fb6a54415666908f0b4acd3dd1a50a7b0dbd8349
                     window.scrollTo({
                         top: offsetTop,
                         behavior: 'smooth'
@@ -178,7 +208,11 @@ function initLazyLoading() {
 
         // Fallback for browsers without native lazy loading
         const images = document.querySelectorAll('img[loading="lazy"]');
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> fb6a54415666908f0b4acd3dd1a50a7b0dbd8349
         if ('IntersectionObserver' in window) {
             const imageObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -210,7 +244,11 @@ function initLazyLoading() {
 function initBackToTop() {
     try {
         const backToTopBtn = document.getElementById('backToTop');
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> fb6a54415666908f0b4acd3dd1a50a7b0dbd8349
         if (!backToTopBtn) {
             console.warn('Back to top button not found');
             return;
@@ -228,12 +266,20 @@ function initBackToTop() {
         // Smooth scroll to top when clicked
         backToTopBtn.addEventListener('click', (e) => {
             e.preventDefault();
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> fb6a54415666908f0b4acd3dd1a50a7b0dbd8349
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
             });
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> fb6a54415666908f0b4acd3dd1a50a7b0dbd8349
             // Optional: Focus on the top of the page for accessibility
             document.querySelector('#home').focus();
         });
@@ -255,15 +301,26 @@ function initBackToTop() {
 function handleResumeDownload() {
     try {
         const downloadBtn = document.querySelector('.btn-download');
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> fb6a54415666908f0b4acd3dd1a50a7b0dbd8349
         if (downloadBtn) {
             downloadBtn.addEventListener('click', function(e) {
                 // Check if the PDF file exists (basic check)
                 const link = this.getAttribute('href');
+<<<<<<< HEAD
 
                 // Add analytics or tracking here if needed
                 console.log('Resume download initiated');
 
+=======
+                
+                // Add analytics or tracking here if needed
+                console.log('Resume download initiated');
+                
+>>>>>>> fb6a54415666908f0b4acd3dd1a50a7b0dbd8349
                 // You can add additional functionality here like:
                 // - Analytics tracking
                 // - Download counter
@@ -287,7 +344,11 @@ function initTypingAnimation() {
 
         const text = subtitle.textContent;
         subtitle.textContent = '';
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> fb6a54415666908f0b4acd3dd1a50a7b0dbd8349
         let i = 0;
         const typeWriter = () => {
             if (i < text.length) {
@@ -321,7 +382,11 @@ function initScrollProgress() {
             z-index: 1001;
             transition: width 0.1s ease;
         `;
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> fb6a54415666908f0b4acd3dd1a50a7b0dbd8349
         document.body.appendChild(progressBar);
 
         // Update progress on scroll
@@ -329,7 +394,11 @@ function initScrollProgress() {
             const scrollTop = window.scrollY;
             const docHeight = document.documentElement.scrollHeight - window.innerHeight;
             const scrollPercent = (scrollTop / docHeight) * 100;
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> fb6a54415666908f0b4acd3dd1a50a7b0dbd8349
             progressBar.style.width = scrollPercent + '%';
         });
 
@@ -344,6 +413,7 @@ document.addEventListener('DOMContentLoaded', initScrollProgress);
 // Form validation (if contact form is added later)
 function validateContactForm(formData) {
     const errors = [];
+<<<<<<< HEAD
 
     if (!formData.name || formData.name.trim().length < 2) {
         errors.push('Name must be at least 2 characters long');
@@ -357,6 +427,21 @@ function validateContactForm(formData) {
         errors.push('Message must be at least 10 characters long');
     }
 
+=======
+    
+    if (!formData.name || formData.name.trim().length < 2) {
+        errors.push('Name must be at least 2 characters long');
+    }
+    
+    if (!formData.email || !isValidEmail(formData.email)) {
+        errors.push('Please enter a valid email address');
+    }
+    
+    if (!formData.message || formData.message.trim().length < 10) {
+        errors.push('Message must be at least 10 characters long');
+    }
+    
+>>>>>>> fb6a54415666908f0b4acd3dd1a50a7b0dbd8349
     return errors;
 }
 
@@ -381,7 +466,11 @@ function initPerformanceMonitoring() {
             if (scrollTimeout) {
                 clearTimeout(scrollTimeout);
             }
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> fb6a54415666908f0b4acd3dd1a50a7b0dbd8349
             scrollTimeout = setTimeout(() => {
                 // Scroll ended - can perform cleanup or optimizations
             }, 150);
@@ -416,6 +505,7 @@ function handleMissingElements() {
 // Initialize error handling
 document.addEventListener('DOMContentLoaded', handleMissingElements);
 
+<<<<<<< HEAD
 // Article modal functionality
 function initArticleModals() {
     try {
@@ -586,6 +676,8 @@ function initArticleModals() {
     }
 }
 
+=======
+>>>>>>> fb6a54415666908f0b4acd3dd1a50a7b0dbd8349
 // Export functions for testing (if needed)
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
@@ -594,7 +686,13 @@ if (typeof module !== 'undefined' && module.exports) {
         initSmoothScrolling,
         initLazyLoading,
         validateContactForm,
+<<<<<<< HEAD
         isValidEmail,
         initArticleModals
     };
 }
+=======
+        isValidEmail
+    };
+}
+>>>>>>> fb6a54415666908f0b4acd3dd1a50a7b0dbd8349
