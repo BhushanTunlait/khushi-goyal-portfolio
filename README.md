@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Khushi Goyal - Portfolio
 
 A modern, responsive portfolio website showcasing Khushi Goyal's legal expertise and professional achievements. Final-year LL.B. (Hons.) student at Acropolis Institute of Law, specializing in Constitutional Law, Human Rights, and Criminal Law.
@@ -116,4 +115,4 @@ The project uses the following **CSS** and **JavaScript** libraries, but no depe
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 For any questions or clarifications, feel free to contact Khushi Goyal at [goyalkhushi259@gmail.com](mailto:goyalkhushi259@gmail.com).
->>>>>>> fb6a54415666908f0b4acd3dd1a50a7b0dbd8349
+
