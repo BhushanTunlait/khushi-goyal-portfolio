@@ -1149,8 +1149,6 @@ section {
     padding: 35px;
     width: 80%;
     max-width: 800px;
-    max-height: 80vh;
-    overflow-y: auto;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -1242,9 +1240,7 @@ section {
         padding-top: 60px;
     }
     .environmental-law-modal-content {
-        margin: 15px auto;
         padding: 25px;
-        width: 90%;
     }
     .environmental-law-modal h2 {
         font-size: 20px;
@@ -1260,10 +1256,7 @@ section {
         padding-top: 50px;
     }
     .environmental-law-modal-content {
-        margin: 10px auto;
         padding: 20px;
-        width: 95%;
-        max-height: 85vh;
     }
     .environmental-law-modal-content p,
     .environmental-law-modal-content li {
@@ -1282,6 +1275,10 @@ section {
         width: 100%;
         text-align: center;
         margin-bottom: 10px;
+    }
+    .footer-bottom {
+        padding: 1rem 0;
+        font-size: 0.9rem;
     }
 }
 
